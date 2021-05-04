@@ -111,4 +111,8 @@ The lines from `bashrc-misc.sh` can be added optionally to your `~/.bashrc` file
 | `alias lsa`      | A typical alias for the ls command. Everyone has their favorite format of ls, right? |
 | `alias gedit`    | runs gedit as separate process and ignores any console output (such as warnings)     |
 | `gitex()`        | runs the 3rd party Git GUI 'GitExtensions' on the windows side.<br>*Note: this is a function. It is intended more as an example addition.* |
+<br><br>
 
+# Contributions
+If you have created other ***general-purpose*** scripts or tools **specific to WSL** that you think would fit into this collection, feel free to start a pull request.<br>
+Any other improvements are of course also welcome as long as they work.
