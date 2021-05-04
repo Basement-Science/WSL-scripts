@@ -23,7 +23,7 @@ For example, `cmd` is able to start additional windows, such as terminals, easil
 | `alias ccmd`   | Executes whatever comes next as a cmd command.<br>**Example:** `ccmd start cmd &` --> opens a separate cmd window.<br>***Caveats:***<br><ul style="padding-left:1.2em"><li>*this will change directory to `C:\Windows` during execution<br>because cmd does not support UNC-Paths such as those used by WSL.*</li><li>*some characters may need to be escaped using `\`, such as `>`*</li></ul>  |
 | `echo%`        | Outputs a string as parsed by cmd. Useful for debugging or passing it to other commands. Does not output a newline.<br>**Example:** `echo% %appdata%` --> E:\Users\USERNAME\AppData\Roaming            |
 | `path%`        | Outputs a Linux-formatted path parsed from `echo%`. Does not output a newline.<br>**Example:** `path% %appdata%` --> /mnt/e/Users/USERNAME/AppData/Roaming |
-| `cd  %`        | changes directory to a path as parsed by `path%`.<br>**Example:** `cd% %appdata%` |
+| `cd%`          | changes directory to a path as parsed by `path%`.<br>**Example:** `cd% %appdata%` |
 <br>
 
 ## More ***optional*** Additions that depend on the above:
@@ -47,7 +47,7 @@ To add working commands for `shutdown` and `reboot`, open your `~/.bashrc` file 
 | -----------          | ------------------------------------------------------------------------------------ |
 | `alias shutdown`     | shuts down the current distribution only.                                            |
 | `alias shutdown-all` | shuts ALL distributions AND the WSL engine.                                          |
-| `alias reboot`       | <ul style="padding-left:1.2em"><li>**Variant 1:** reboot the current WSL distribution, launch a new Window of it that starts out at C:\</li><li>**Variant 2:** reboot the current WSL distribution, but close the new session's terminal.<br>The Distro will be ready to work when you open a new terminal.</li></ul> |
+| `alias reboot`       | <ul style="padding-left:1.2em"><li>**Variant 1:** reboot the current WSL distribution, launch a new Window of it that starts out at C:\ </li><li>**Variant 2:** reboot the current WSL distribution, but close the new session's terminal.<br>The Distro will be ready to work when you open a new terminal.</li></ul> |
 | `alias reboot`       | <ul style="padding-left:1.2em"><li>**Variant 3:** reboot the CURRENT WSL distribution, SHUT DOWN all other Distributions AND the WSL engine, launch a new Window that starts out at C:\ </li><li>**Variant 4:** reboot the CURRENT WSL distribution, but close the new session's terminal, SHUT DOWN all other Distributions AND the WSL engine.</li></ul> |
 <br><br>
 
@@ -96,7 +96,7 @@ The last command does exactly the same as what will run whenever you reboot the 
 
 ---
 ### You can add or remove VHDs at any time later. Simply edit the `~/.bashrc` file and `WSL_mount-VHDs.ps1` as before and reboot WSL or run `source ~/.bashrc`. However note that the scripts do not unmount anything, you may need to do that manually.
-<br><br>
+<br>
 
 # Linux-side configuration for using GUI applications
 *This section is not a tutorial. It only includes the necessary additions to the `~/.bashrc` file.*
