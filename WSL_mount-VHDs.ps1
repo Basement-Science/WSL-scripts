@@ -1,7 +1,8 @@
 # this mounts a single VHD.
 function WSL_mount-VHD($VHDpath) {
 	[Int32]$DriveNumber = $null
-	function Get-Vdisk-T-Number {
+	# A subfunction!
+	function Get-Vdisk-Number {
 		Write-Host -ForegroundColor DarkYellow "The VHD seems to be already mounted. You can check Diskmgmt.msc"
 		[string]$cmdOutput = $((Get-VHD $VHDpath | Get-Disk).Number)
 		if (![string]::IsNullOrWhiteSpace($cmdOutput)) {
@@ -18,10 +19,10 @@ function WSL_mount-VHD($VHDpath) {
 		if ([Int32]::TryParse($cmdOutput,[ref]$DriveNumber)){
 			Write-Host -ForegroundColor blue "mounted VHD as \\.\PhysicalDrive$DriveNumber"
 		} else {
-			Get-Vdisk-T-Number
+			Get-Vdisk-Number
 		}
 	} else {
-		Get-Vdisk-T-Number
+		Get-Vdisk-Number
 	}
 	
 	[string]$DiskPath = "\\.\PhysicalDrive$DriveNumber"
