@@ -3,7 +3,7 @@ alias cmd='cmd.exe'
 
 # make Windows CMD's /C option usable from any Directory without it complaining about
 # not supporting UNC-paths. Not suitable for all Commands because of this missing support.
-alias ccmd='f(){ cwd=$(pwd); cd /mnt/c; cmd.exe /c "$@"; cd $cwd; unset -f f; }; f'
+alias ccmd='f(){ cwd=$(pwd); cd /mnt/c; cmd.exe /c "$@"; cd "$cwd"; unset -f f; }; f'
 
 # outputs a String that can be used in other Shellscripts. Does NOT add a Newline after it.
 alias echo%='f(){ ccmd \<NUL set /p="$@"; unset -f f; }; f'
