@@ -6,7 +6,7 @@ alias cmd='cmd.exe'
 alias ccmd='f(){ cwd=$(pwd); cd /mnt/c; cmd.exe /c "$@"; cd "$cwd"; unset -f f; }; f'
 
 # outputs a String that can be used in other Shellscripts. Does NOT add a Newline after it.
-alias echo%='f(){ ccmd \<NUL set /p="$@"; unset -f f; }; f'
+alias echo%='f(){ ccmd \<NUL set /p "=$@"; unset -f f; }; f'
 
 # evaluates a Windows style path "the CMD way" and then converts it into a Linux path.
 alias path%='f(){ wslpath -a $(echo% "$@"); unset -f f; }; f'
