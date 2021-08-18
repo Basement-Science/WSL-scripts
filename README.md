@@ -109,6 +109,7 @@ The lines from `bashrc-misc.sh` can be added optionally to your `~/.bashrc` file
 | -----------      | ------------------------------------------------------------------------------------ |
 | `alias explorer` | opens Windows Explorer in the current directory.                                     |
 | `alias lsa`      | A typical alias for the ls command. Everyone has their favorite format of ls, right? |
+| `alias reload-bashrc`      | command to reload the `.bashrc` file from any directory |
 | `alias gedit`    | runs gedit as separate process and ignores any console output (such as warnings)     |
 | `gitex()`        | runs the 3rd party Git GUI 'GitExtensions' on the windows side.<br>*Note: this is a function. It is intended more as an example addition.* |
 <br><br>

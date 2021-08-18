@@ -45,6 +45,9 @@ alias explorer='explorer.exe .'
 # A typical alias for ls
 alias lsa='ls -la'
 
+# command to reload the .bashrc file from any directory
+alias reload-bashrc='source $HOME/.bashrc; echo "$HOME/.bashrc reloaded!"'
+
 # runs gedit as separate process and ignores any console output (such as warnings)
 alias gedit='f(){ gedit "$@" &>/dev/null & unset -f f; }; f'
 
